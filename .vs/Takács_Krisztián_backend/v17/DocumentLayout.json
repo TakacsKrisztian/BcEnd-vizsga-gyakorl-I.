@@ -1,12 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\profo\\source\\repos\\Tak\u00E1cs_Kriszti\u00E1n_backend\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{20430FBC-FEB7-48A4-B62F-926C3DDD5F88}|Tak\u00E1cs_Kriszti\u00E1n_backend.csproj|c:\\users\\profo\\source\\repos\\tak\u00E1cs_kriszti\u00E1n_backend\\repositories\\services\\tanarservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20430FBC-FEB7-48A4-B62F-926C3DDD5F88}|Tak\u00E1cs_Kriszti\u00E1n_backend.csproj|solutionrelative:repositories\\services\\tanarservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20430FBC-FEB7-48A4-B62F-926C3DDD5F88}|Tak\u00E1cs_Kriszti\u00E1n_backend.csproj|c:\\users\\profo\\source\\repos\\tak\u00E1cs_kriszti\u00E1n_backend\\repositories\\services\\jegyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20430FBC-FEB7-48A4-B62F-926C3DDD5F88}|Tak\u00E1cs_Kriszti\u00E1n_backend.csproj|solutionrelative:repositories\\services\\jegyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20430FBC-FEB7-48A4-B62F-926C3DDD5F88}|Tak\u00E1cs_Kriszti\u00E1n_backend.csproj|c:\\users\\profo\\source\\repos\\tak\u00E1cs_kriszti\u00E1n_backend\\repositories\\services\\tantargyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20430FBC-FEB7-48A4-B62F-926C3DDD5F88}|Tak\u00E1cs_Kriszti\u00E1n_backend.csproj|solutionrelative:repositories\\services\\tantargyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TantargyService.cs",
+              "DocumentMoniker": "C:\\Users\\profo\\source\\repos\\Tak\u00E1cs_Kriszti\u00E1n_backend\\Repositories\\Services\\TantargyService.cs",
+              "RelativeDocumentMoniker": "Repositories\\Services\\TantargyService.cs",
+              "ToolTip": "C:\\Users\\profo\\source\\repos\\Tak\u00E1cs_Kriszti\u00E1n_backend\\Repositories\\Services\\TantargyService.cs",
+              "RelativeToolTip": "Repositories\\Services\\TantargyService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T11:44:48.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TanarService.cs",
+              "DocumentMoniker": "C:\\Users\\profo\\source\\repos\\Tak\u00E1cs_Kriszti\u00E1n_backend\\Repositories\\Services\\TanarService.cs",
+              "RelativeDocumentMoniker": "Repositories\\Services\\TanarService.cs",
+              "ToolTip": "C:\\Users\\profo\\source\\repos\\Tak\u00E1cs_Kriszti\u00E1n_backend\\Repositories\\Services\\TanarService.cs",
+              "RelativeToolTip": "Repositories\\Services\\TanarService.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAYwBoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T11:44:47.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "JegyService.cs",
+              "DocumentMoniker": "C:\\Users\\profo\\source\\repos\\Tak\u00E1cs_Kriszti\u00E1n_backend\\Repositories\\Services\\JegyService.cs",
+              "RelativeDocumentMoniker": "Repositories\\Services\\JegyService.cs",
+              "ToolTip": "C:\\Users\\profo\\source\\repos\\Tak\u00E1cs_Kriszti\u00E1n_backend\\Repositories\\Services\\JegyService.cs",
+              "RelativeToolTip": "Repositories\\Services\\JegyService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T11:44:46.72Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
