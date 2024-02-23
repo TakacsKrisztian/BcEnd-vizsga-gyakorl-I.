@@ -1,4 +1,5 @@
-﻿using Takács_Krisztián_backend.Repositories.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using Takács_Krisztián_backend.Models.Dtos;
 
 namespace Takács_Krisztián_backend.Repositories.Services
 {
@@ -6,38 +7,63 @@ namespace Takács_Krisztián_backend.Repositories.Services
     {
         private readonly OsztalynaploContext osztalynaploContext;
 
-        public JegyService(OsztalynaploContext osztalynaploContext)
+        public TanarService(OsztalynaploContext osztalynaploContext)
         {
             this.osztalynaploContext = osztalynaploContext;
         }
 
-        public Task<TanarDto> Post(CreateTanarDto createTanarDto)
+        public async Task<Tanarok> Post(CreateTanarDto createTanarDto)
         {
-            throw new NotImplementedException();
+            var tanar = new Tanarok
+            {
+                VezetekNev = createTanarDto.VezetekNev,
+                KeresztNev = createTanarDto.KeresztNev,
+                Email = createTanarDto.Email,
+                Nem = createTanarDto.Nem,
+            };
+
+            await osztalynaploContext.Tanaroks.AddAsync(tanar);
+            await osztalynaploContext.SaveChangesAsync();
+            return tanar;
         }
 
-        public Task<IEnumerable<Tanarok>> GetAll()
+        public async Task<IEnumerable<Tanarok>> GetAll()
         {
-            throw new NotImplementedException();
+            return await osztalynaploContext.Tanaroks.ToListAsync();
         }
 
-        public Task<Tanarok> GetById(int id)
+        public async Task<Tanarok> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await osztalynaploContext.Tanaroks.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public Task<Tanarok> DeleteById(int id)
+        public async Task<Tanarok> Put(int id, ModifyTanarDto modifyTanarDto)
         {
-            throw new NotImplementedException();
+            var tanar = new Tanarok
+            {
+                VezetekNev = modifyTanarDto.VezetekNev,
+                KeresztNev = modifyTanarDto.KeresztNev,
+                Email = modifyTanarDto.Email,
+                Nem = modifyTanarDto.Nem,
+            };
+
+            osztalynaploContext.Update(tanar);
+            await osztalynaploContext.SaveChangesAsync();
+
+            return tanar;
         }
 
-        
-
-        
-
-        public Task<TanarDto> Put(int id, ModifyTanarDto modifyTanarDto)
+        public async Task<Tanarok> DeleteById(int id)
         {
-            throw new NotImplementedException();
+            var tanar = await osztalynaploContext.Tanaroks.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (tanar != null)
+            {
+                osztalynaploContext.Tanaroks.Remove(tanar);
+                await osztalynaploContext.SaveChangesAsync();
+            }
+
+            return tanar;
         }
     }
 }

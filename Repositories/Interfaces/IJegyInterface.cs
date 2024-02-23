@@ -3,9 +3,10 @@
     public interface IJegyInterface
     {
         Task<IEnumerable<Jegyek>> GetAll();
+        public string GetCount();
         Task<Jegyek> GetById(int id);
-        Task<JegyDto> Post(CreateJegyDto createJegyDto);
-        Task<JegyDto> Put(int id, ModifyTanarDto modifyTanarDto);
-        Task<JegyDto> DeleteById(int id);
+        Task<Jegyek> Post(CreateJegyDto createJegyDto);
+        Task<Jegyek> Put(int id, ModifyJegyDto modifyJegyDto);
+        Task<Jegyek> DeleteById(int id);
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Takács_Krisztián_backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c2e2b9f464c4df010f9c4e2317650df63a1bdc2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+222b2e8155c471559539deebb089ddc36c0598fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("Takács_Krisztián_backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Takács_Krisztián_backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

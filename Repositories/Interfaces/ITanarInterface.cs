@@ -4,8 +4,8 @@
     {
         Task<IEnumerable<Tanarok>> GetAll();
         Task<Tanarok> GetById(int id);
-        Task<TanarDto> Post(CreateTanarDto createTanarDto);
-        Task<TanarDto> Put(int id, ModifyTanarDto modifyTanarDto);
+        Task<Tanarok> Post(CreateTanarDto createTanarDto);
+        Task<Tanarok> Put(int id, ModifyTanarDto modifyTanarDto);
         Task<Tanarok> DeleteById(int id);
     }
 }

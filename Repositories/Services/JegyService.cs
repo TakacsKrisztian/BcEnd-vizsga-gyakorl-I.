@@ -1,4 +1,6 @@
-﻿using Takács_Krisztián_backend.Repositories.Interfaces;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Takács_Krisztián_backend.Models.Dtos;
 
 namespace Takács_Krisztián_backend.Repositories.Services
 {
@@ -11,29 +13,63 @@ namespace Takács_Krisztián_backend.Repositories.Services
             this.osztalynaploContext = osztalynaploContext;
         }
 
-        public Task<JegyDto> Post(CreateJegyDto createJegyDto)
+        public async Task<Jegyek> Post(CreateJegyDto createJegyDto)
         {
-            throw new NotImplementedException();
+            var jegy = new Jegyek
+            {
+                JegySzammal = createJegyDto.JegySzammal,
+                JegySzoveggel = createJegyDto.JegySzoveggel,
+                IdTanarok = createJegyDto.IdTanarok,
+                IdTantargyak = createJegyDto.IdTantargyak,
+            };
+
+            await osztalynaploContext.Jegyeks.AddAsync(jegy);
+            await osztalynaploContext.SaveChangesAsync();
+            return jegy;
         }
 
-        public Task<IEnumerable<Jegyek>> GetAll()
+        public async Task<IEnumerable<Jegyek>> GetAll()
         {
-            throw new NotImplementedException();
+            return await osztalynaploContext.Jegyeks.ToListAsync();
         }
 
-        public Task<Jegyek> GetById(int id)
+        public string GetCount()
         {
-            throw new NotImplementedException();
+            return "Összes jegy száma: " + osztalynaploContext.Jegyeks.Count();
         }
 
-        public Task<JegyDto> Put(int id, ModifyTanarDto modifyTanarDto)
+        public async Task<Jegyek> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await osztalynaploContext.Jegyeks.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public Task<JegyDto> DeleteById(int id)
+        public async Task<Jegyek> Put(int id, ModifyJegyDto modifyJegyDto)
         {
-            throw new NotImplementedException();
+            var jegy = new Jegyek
+            {
+                JegySzammal = modifyJegyDto.JegySzammal,
+                JegySzoveggel = modifyJegyDto.JegySzoveggel,
+                IdTanarok = modifyJegyDto.IdTanarok,
+                IdTantargyak = modifyJegyDto.IdTantargyak,
+            };
+
+            osztalynaploContext.Update(jegy);
+            await osztalynaploContext.SaveChangesAsync();
+
+            return jegy;
+        }
+
+        public async Task<Jegyek> DeleteById(int id)
+        {
+            var jegy = await osztalynaploContext.Jegyeks.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (jegy != null)
+            {
+                osztalynaploContext.Jegyeks.Remove(jegy);
+                await osztalynaploContext.SaveChangesAsync();
+            }
+
+            return jegy;
         }
     }
 }

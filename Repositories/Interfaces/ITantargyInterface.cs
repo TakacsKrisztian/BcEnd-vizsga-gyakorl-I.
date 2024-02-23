@@ -4,8 +4,8 @@
     {
         Task<IEnumerable<Tantargyak>> GetAll();
         Task<Tantargyak> GetById(int id);
-        Task<TantargyDto> Post(CreateTantargyDto createTantargyDto);
-        Task<TantargyDto> Put(int id, ModifyTantargyDto modifyTantargyDto);
+        Task<Tantargyak> Post(CreateTantargyDto createTantargyDto);
+        Task<Tantargyak> Put(int id, ModifyTantargyDto modifyTantargyDto);
         Task<Tantargyak> DeleteById(int id);
     }
 }

@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Takács_Krisztián_backend.Repositories.Interfaces;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Takács_Krisztián_backend.Controllers
 {
@@ -14,16 +14,30 @@ namespace Takács_Krisztián_backend.Controllers
             this.jegyInterface = jegyInterface;
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost("jegy")]
         public async Task<ActionResult<JegyDto>> Post(CreateJegyDto createJegyDto)
         {
-            return StatusCode(200, await jegyInterface.Post(createJegyDto));
+            if (User.IsInRole("Admin"))
+            {
+                return StatusCode(200, await jegyInterface.Post(createJegyDto));
+            }
+            else
+            {
+                return StatusCode(401, "Nincs jogosultsága új versenyző felvételéhez!");
+            }
         }
 
         [HttpGet("alljegy")]
         public async Task<IEnumerable<Jegyek>> Get()
         {
             return await jegyInterface.GetAll();
+        }
+
+        [HttpGet("countjegy")]
+        public async Task<string> GetCount()
+        {
+            return jegyInterface.GetCount();
         }
 
         [HttpGet("jegybyid/{id}")]

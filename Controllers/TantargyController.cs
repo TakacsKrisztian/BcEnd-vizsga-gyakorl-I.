@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Takács_Krisztián_backend.Repositories.Interfaces;
 
 namespace Takács_Krisztián_backend.Controllers
 {

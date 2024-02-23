@@ -56,12 +56,12 @@ public partial class OsztalynaploContext : DbContext
                 .HasColumnName("jegy_szoveggel");
             entity.Property(e => e.ModositasDatuma).HasColumnName("modositas_datuma");
 
-            entity.HasOne(d => d.IdTanarokNavigation).WithMany(p => p.Jegyeks)
+            entity.HasOne(d => d.IdTanarokNavigation).WithMany(p => p.Jegyek)
                 .HasForeignKey(d => d.IdTanarok)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("jegyek_ibfk_1");
 
-            entity.HasOne(d => d.IdTantargyakNavigation).WithMany(p => p.Jegyeks)
+            entity.HasOne(d => d.IdTantargyakNavigation).WithMany(p => p.Jegyek)
                 .HasForeignKey(d => d.IdTantargyak)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("jegyek_ibfk_2");
